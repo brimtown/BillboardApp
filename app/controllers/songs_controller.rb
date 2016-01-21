@@ -1,7 +1,5 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all.order(year: :asc)
-    @songsa = Song.includes(:year)
-    @years = @songs.uniq.pluck(:year)
+    @songs_grouped_by_year = Song.all.group_by(&:year)
   end
 end

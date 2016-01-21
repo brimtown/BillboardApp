@@ -1,8 +1,8 @@
-<% @years.each do |year| -%>
+<% @songs_grouped_by_year.each do |year, songs| %>
   <h3><%= year %></h3>
-  	<ul>
-      <% @songs.where(year: year).each do |song| -%>
-        <li><%= song.title %> - <%= song.artist %></li>
-      <% end -%>
+  <ul>
+    <% songs.each do |song| %>
+      <li><%= song.title %> - <%= song.artist %></li>
+    <% end %>
   </ul>
-<% end -%>
+<% end %>
