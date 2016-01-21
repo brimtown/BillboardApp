@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160106212046) do
+ActiveRecord::Schema.define(version: 20160121203053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.text     "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "seed_migration_data_migrations", force: :cascade do |t|
     t.string   "version"
@@ -24,11 +30,11 @@ ActiveRecord::Schema.define(version: 20160106212046) do
 
   create_table "songs", force: :cascade do |t|
     t.text     "title"
-    t.text     "artist"
     t.integer  "year"
     t.integer  "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "artist_id"
   end
 
 end
