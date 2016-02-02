@@ -2,7 +2,7 @@
   <h3><%= year %></h3>
   <ul>
     <% songs.each do |song| %>
-      <li><%= song.title %> - <%= song.artist %></li>
+      <li><%= song.title %> - <%= link_to song.artist.name, '/artists/'+song.artist.id.to_s %></li>
     <% end %>
   </ul>
 <% end %>
