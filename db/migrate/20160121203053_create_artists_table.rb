@@ -9,6 +9,11 @@ class CreateArtistsTable < ActiveRecord::Migration
 
     sql = <<-sql
        INSERT INTO artists(name) (SELECT distinct(artist) FROM songs);
+
+       UPDATE songs s
+       SET s.artist_id = artists.id
+       FROM artists
+       WHERE s.artist = artists.name;
     sql
 
     execute(sql)
