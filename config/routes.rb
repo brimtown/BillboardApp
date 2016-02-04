@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'songs/index' => 'songs#index'
+  get 'chart_entries/index' => 'chart_entries#index'
   get 'artists/:id' => 'artists#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'songs#index'
+  root 'chart_entries#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

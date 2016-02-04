@@ -1,11 +1,9 @@
 <h3><%= @artist.name %></h3> 
 <ul>
-  <% @songs_by_artist.each do |song| %>
-    <li><%= song.title %> (<%= song.year %>) - #<%= song.position %></li>
+  <% @chart_entries_by_artist.each do |entry| %>
+    <li><%= entry.song.title %> (<%= entry.year %>) - #<%= entry.position %></li>
   <% end %>
 </ul>
 <br>
 <%= link_to 'Home', root_url %>
-
-He's really good!
 

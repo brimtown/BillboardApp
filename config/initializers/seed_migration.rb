@@ -1,2 +1,3 @@
 SeedMigration.register Song
 SeedMigration.register Artist
+SeedMigration.register ChartEntry
