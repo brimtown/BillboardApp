@@ -1,0 +1,8 @@
+<% @chart_entries_grouped_by_year.each do |year, entries| %>
+  <h3><%= year %></h3>
+  <ul>
+    <% entries.each do |entry| %>
+      <li><%= entry.position %>. <%= entry.song.title %> - <%= link_to entry.song.artist.name, '/artists/'+entry.song.artist.id.to_s %></li>
+    <% end %>
+  </ul>
+<% end %>
