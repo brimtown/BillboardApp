@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'chart_entries/index' => 'chart_entries#index'
   get 'artists/:id' => 'artists#show'
 
+  resources :songs, only: [:index]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
